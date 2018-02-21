@@ -14,7 +14,7 @@ xcode-select --install
 <tr>
 <th width="33%"><a href="http://brew.sh">Homebrew</a></td>
 <th width="33%">Installer Script</td>
-<th width="33%">Rubygems</td>
+<th width="33%">RubyGems</td>
 </tr>
 <tr>
 <td width="33%" align="center">macOS</td>
@@ -29,11 +29,39 @@ xcode-select --install
 </table>
 
 # Available Actions
-### beta
+## iOS
+### ios update
 ```
-fastlane beta
+fastlane ios update
 ```
+update Fastlane
+### ios speak
+```
+fastlane ios speak
+```
+Says 'Yesh, me Lord'
+### ios test
+```
+fastlane ios test
+```
+Runs all the tests
+### ios beta
+```
+fastlane ios beta
+```
+Submit a new Beta TestFlight
 
+This will also make sure the profile is up to date
+### ios release
+```
+fastlane ios release
+```
+Deploy a new version to the App Store
+### ios jazzydoc
+```
+fastlane ios jazzydoc
+```
+Create Jazzy docs
 
 ----
 

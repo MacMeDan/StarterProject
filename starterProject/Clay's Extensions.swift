@@ -7,15 +7,7 @@
 //
 
 import Foundation
-//
-//  UIView+Extras.swift
-//  Clay Ellis
-//  gist.github.com/clayellis/0cf1b1092b6a08cb4c5b2da9abee5ed9
-//
-
 import UIKit
-
-
 
 extension UIView: ConfigurableView {}
 

@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// - Tag: Font
 extension UIFont {
     
     func withTraits(traits: UIFontDescriptorSymbolicTraits...) -> UIFont {

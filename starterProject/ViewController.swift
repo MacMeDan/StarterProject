@@ -19,7 +19,7 @@ extension UIViewController {
     func addDoneButtonLeft(tint: UIColor = .black) {
         let button = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissView))
         button.accessibilityIdentifier = "Cancel"
-        button.tintColor = .tint
+        button.tintColor = tint
         navigationItem.leftBarButtonItem = button
     }
     
@@ -40,6 +40,34 @@ extension UIViewController {
         navigationController?.navigationBar.barTintColor = tint
         navigationController?.toolbar.backgroundColor = color
         navigationController?.navigationBar.isTranslucent = false
+    }
+    
+    func prepareNavigation(style: UIStatusBarStyle = .default ,backgroundColor: UIColor = .white, textColor: UIColor = .black, barStyle: UIBarStyle = .default) {
+        UIApplication.shared.statusBarStyle = .lightContent
+        UINavigationBar.appearance().barStyle = .blackOpaque
+        UINavigationBar.appearance().tintColor = textColor
+        UINavigationBar.appearance().backgroundColor = backgroundColor
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : textColor]
+    }
+    
+    public func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc public func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func settingsAlert(title: String = "Photo permissions not enabled", message: String = "Would you like to open settings to change them?") {
+        let changeSetting = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        changeSetting.addAction(UIAlertAction(title: "Open Settings", style: .default, handler: { (UIAlertAction) -> Void in
+            guard let url = URL(string: UIApplicationOpenSettingsURLString) else { return }
+            if #available(iOS 10, *) { UIApplication.shared.open(url) }
+            else { UIApplication.shared.openURL(url) }
+        }))
+        changeSetting.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        changeSetting.presentOnTop()
     }
 }
 

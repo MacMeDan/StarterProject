@@ -7,6 +7,8 @@
 //
 
 import UIKit
+
+/// - Tag: UITableView
 extension UITableView {
     func removeLines() {
         self.tableFooterView = UIView()

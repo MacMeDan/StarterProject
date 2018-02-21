@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+/// - Tag: Color
+
 extension UIColor {
     class func colorWithRGB(_ rgbValue: UInt, alpha: CGFloat = 1.0) -> UIColor {
         let red = CGFloat((rgbValue & 0xFF0000) >> 16) / 255
@@ -23,7 +25,7 @@ extension UIColor {
     }
     
     // Leveraged for getting gradient colors
-    
+    /// - Tag: Gradient
     class func interpolate(_ from: UIColor, to: UIColor, progress: CGFloat) -> UIColor {
         var from_red: CGFloat = 0
         var from_green: CGFloat = 0

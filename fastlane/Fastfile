@@ -1,27 +1,111 @@
-# More documentation about how to customize your build
-# can be found here:
-# https://docs.fastlane.tools
-fastlane_version "1.109.0"
+# Customize this file, documentation can be found here:
+# https://docs.fastlane.tools/actions/
+# All available actions: https://docs.fastlane.tools/actions
+# can also be listed using the `fastlane actions` command
 
-# This value helps us track success metrics for Fastfiles
-# we automatically generate. Feel free to remove this line
-# once you get things running smoothly!
-generated_fastfile_id "8458c464-ec8d-45b6-8873-77c6411019f0"
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "2.63.0"
 
 default_platform :ios
 
-# Fastfile actions accept additional configuration, but
-# don't worry, fastlane will prompt you for required
-# info which you can add here later
-lane :beta do
-  # increment_build_number
+platform :ios do
+  before_all do
+    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
+    # You may want to push to github this will requrie a GITHUB_TOKEN
+    # EX ENV["GITHUB_TOKEN"] = "08cfd075c3324c010f61506fd70dffe8o9a25f230"
+    # cocoapods
+    # carthage
+    #Setup your project
+     ENV["PROJECT_NAME"] = "Starter Project"
+     ENV["Scheme"] = "debug"
 
-  # build your iOS app
-  gym(
-    # scheme: "YourScheme",
-    export_method: "app-store"
-  )
+     #You can define your own actions like this one
 
-  # upload to Testflight
-  pilot(skip_waiting_for_build_processing: true)
+      # http://git-scm.com/docs/pretty-formats
+      # <short hash> <commit title>
+      def change_log_since_last_tag
+        return changelog_from_git_commits(pretty: '%h %s')
+      end
+
+      def version_string( version_number, build_number)
+       "#{version_number}/#{build_number}"
+     end
+
+  end
+
+  desc "update Fastlane"
+  lane :update do
+    update_fastlane
+  end
+
+  desc "Says 'Yesh, me Lord'"
+  lane :speak do
+    say "Yessss, mEE Lord"
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    scan
+  end
+
+  desc "Submit a new Beta TestFlight"
+  desc "This will also make sure the profile is up to date"
+  lane :beta do
+
+    version_number = get_version_number
+    build_number = increment_build_number
+    complete_version_number = version_string(version_number , build_number)
+    # match(type: "appstore") # more information: https://codesigning.guide
+    clear_derived_data
+    clean_build_artifacts
+    # check your certificates are uptodate
+    cert
+    sigh
+    gym # Build your app - more options available
+    pilot(skip_waiting_for_build_processing: true)
+
+    say "Beta deployed"
+    push_to_git_remote
+
+    # sh "your_script.sh"
+    # You can also use other beta testing services here (run `fastlane actions`)
+  end
+
+  desc "Deploy a new version to the App Store"
+  lane :release do
+    # match(type: "appstore")
+    # snapshot
+    gym # Build your app - more options available
+    deliver(force: true)
+    # frameit
+  end
+
+  desc "Create Jazzy docs"
+  lane :jazzydoc do
+    jazzy
+  end
+
+
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+
+    # slack(
+    #   message: "Successfully deployed new App Update."
+    # )
+  end
+
+  error do |lane, exception|
+    # slack(
+    #   message: exception.message,
+    #   success: false
+    # )
+  end
 end
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# All available actions: https://docs.fastlane.tools/actions
+
+# fastlane reports which actions are used. No personal data is recorded.
+# Learn more at https://docs.fastlane.tools/#metrics
