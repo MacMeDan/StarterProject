@@ -3,8 +3,8 @@ a starting point of iOS Development includes useful extensions and fastlane star
 
 ## Extensions
 
-[Color](x-source-tag://Color)
-[Gradient](x-source-tag://Gradient)
+[Color] (x-source-tag://Color)
+[Gradient] (x-source-tag://Gradient)
 [ArrayGradient](x-source-tag://ArrayGradient)
 [Button](x-source-tag://Button)
 [Font](x-source-tag://Font)
