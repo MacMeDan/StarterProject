@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// - Tag: Button
 extension UIButton {
     
     func roundCorners() {

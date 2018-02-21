@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// - Tag: AlertController
 extension UIAlertController {
     func presentOnTop() {
         if var topController = UIApplication.shared.keyWindow?.rootViewController {

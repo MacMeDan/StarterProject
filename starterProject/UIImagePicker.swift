@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 
+/// - Tag: ImagePicker
 // MARK: - UIImagePickerControllerDelegate Methods
 extension UIViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// - Tag: ArrayGradient
 // MARK: - Gradient
 public extension Array where Element : UIColor {
     
