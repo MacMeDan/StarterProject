@@ -8,8 +8,9 @@
 
 import UIKit
 
-/// - Tag: UITableView
+
 extension UITableView {
+    /// - Tag: TableView
     func removeLines() {
         self.tableFooterView = UIView()
     }

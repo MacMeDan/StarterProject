@@ -9,7 +9,7 @@
 import Foundation
 
 extension Bundle {
-    
+    /// - Tag: Bundle
     var releaseVersionNumber: String? {
         return self.infoDictionary?["CFBundleShortVersionString"] as? String
     }

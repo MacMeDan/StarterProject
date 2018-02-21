@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-/// - Tag: Color
 
 extension UIColor {
+    /// - Tag: Color
     class func colorWithRGB(_ rgbValue: UInt, alpha: CGFloat = 1.0) -> UIColor {
         let red = CGFloat((rgbValue & 0xFF0000) >> 16) / 255
         let green = CGFloat((rgbValue & 0xFF00) >> 8) / 255

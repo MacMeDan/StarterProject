@@ -8,7 +8,6 @@
 
 import UIKit
 
-/// - Tag: AutoLayout
 typealias Constraint = (_ child: UIView,_ parent: UIView) -> NSLayoutConstraint
 
 func equal<Axis, L>(_ from: KeyPath<UIView, L>, _ to: KeyPath<UIView, L>, _ constant: CGFloat = 0) -> Constraint where L: NSLayoutAnchor<Axis> {
@@ -33,6 +32,7 @@ func equal<L>(_ keyPath: KeyPath<UIView, L>, to constant: CGFloat = 0) -> Constr
 // MARK: NSLayoutDimension + Float
 
 public extension NSLayoutDimension {
+    /// - Tag: AutoLayout
     // Constant
     
     public func constraint(equalTo anchor: NSLayoutDimension, constant c: CGFloat = 0, priority p: UILayoutPriority = .defaultHigh, multiplier m: CGFloat = 1.0) -> NSLayoutConstraint {

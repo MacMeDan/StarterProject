@@ -26,3 +26,5 @@ a starting point of iOS Development includes useful extensions and fastlane star
 [AutoLayout](x-source-tag://AutoLayout)
 
 [ImagePicker](x-source-tag://ImagePicker)
+
+[Bundle](x-source-tag://Bundle)

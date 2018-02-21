@@ -8,8 +8,8 @@
 
 import UIKit
 
-/// - Tag: AlertController
 extension UIAlertController {
+    /// - Tag: AlertController
     func presentOnTop() {
         if var topController = UIApplication.shared.keyWindow?.rootViewController {
             while let presentedViewController = topController.presentedViewController {

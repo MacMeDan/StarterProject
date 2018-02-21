@@ -8,9 +8,9 @@
 
 import UIKit
 
-/// - Tag: Font
+
 extension UIFont {
-    
+    /// - Tag: Font
     func withTraits(traits: UIFontDescriptorSymbolicTraits...) -> UIFont {
         guard let descriptor = self.fontDescriptor.withSymbolicTraits(UIFontDescriptorSymbolicTraits(traits)) else {
             return UIFont()

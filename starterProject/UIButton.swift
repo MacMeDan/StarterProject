@@ -8,9 +8,8 @@
 
 import UIKit
 
-/// - Tag: Button
 extension UIButton {
-    
+    /// - Tag: Button
     func roundCorners() {
         self.layer.cornerRadius = self.frame.size.height/2
         self.clipsToBounds = true

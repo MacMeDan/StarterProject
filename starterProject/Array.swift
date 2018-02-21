@@ -9,10 +9,9 @@
 import Foundation
 import UIKit
 
-/// - Tag: ArrayGradient
 // MARK: - Gradient
 public extension Array where Element : UIColor {
-    
+    /// - Tag: ArrayGradient
     public func gradient(_ transform: ((_ gradient: inout CAGradientLayer) -> CAGradientLayer)? = nil) -> CAGradientLayer {
         var gradient = CAGradientLayer()
         gradient.colors = self.map { $0.cgColor }

@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
-/// - Tag: View
+
 extension UIView {
+    /// - Tag: View
     var x: CGFloat {
         set {
             frame = CGRect(x: newValue, y: frame.origin.y, width: frame.size.width, height: frame.size.height)
