@@ -26,6 +26,7 @@
 		2CCE16D11FA2A6C0006D3FD4 /* UIAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE16D01FA2A6C0006D3FD4 /* UIAlertViewController.swift */; };
 		2CCE16D31FA2A745006D3FD4 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE16D21FA2A745006D3FD4 /* UIButton.swift */; };
 		2CCE16D51FA2AB57006D3FD4 /* UIImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE16D41FA2AB57006D3FD4 /* UIImagePicker.swift */; };
+		37055DFF2088457F0066C9CF /* UIStackViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37055DFE2088457F0066C9CF /* UIStackViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		2CCE16D01FA2A6C0006D3FD4 /* UIAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertViewController.swift; sourceTree = "<group>"; };
 		2CCE16D21FA2A745006D3FD4 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		2CCE16D41FA2AB57006D3FD4 /* UIImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePicker.swift; sourceTree = "<group>"; };
+		37055DFE2088457F0066C9CF /* UIStackViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				2CCE16D41FA2AB57006D3FD4 /* UIImagePicker.swift */,
 				2CCE16CE1FA2A639006D3FD4 /* UIFont.swift */,
 				2CCE16C21FA2A401006D3FD4 /* UIView.swift */,
+				37055DFE2088457F0066C9CF /* UIStackViews.swift */,
 				2CCE16D21FA2A745006D3FD4 /* UIButton.swift */,
 				2CCE16D01FA2A6C0006D3FD4 /* UIAlertViewController.swift */,
 				2CCE16C41FA2A424006D3FD4 /* ConfigurableView.swift */,
@@ -253,6 +256,7 @@
 				2CCE16C71FA2A4FC006D3FD4 /* UITableView.swift in Sources */,
 				2CCE16C31FA2A401006D3FD4 /* UIView.swift in Sources */,
 				2CCE169D1FA29589006D3FD4 /* AppDelegate.swift in Sources */,
+				37055DFF2088457F0066C9CF /* UIStackViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

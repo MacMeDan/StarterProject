@@ -20,7 +20,7 @@ extension UIColor {
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
-    static func fromRGB(R: CGFloat, G: CGFloat, B: CGFloat, alpha: CGFloat = 10) -> UIColor {
+    static func fromRGB(R: CGFloat, G: CGFloat, B: CGFloat, alpha: CGFloat = 1) -> UIColor {
         return UIColor(red: R/255.0, green: G/255.0, blue: B/255.0, alpha: alpha)
     }
     
